@@ -1,0 +1,17 @@
+package chapter10.service;
+
+import chapter10.model.UserNewWay;
+
+public class InternalUserService extends AbstractUserService {
+
+    @Override
+    protected boolean validateUser(UserNewWay user) {
+        System.out.println("validating internal user " + user.getName());
+        return true;
+    }
+
+    @Override
+    protected void writeToDB(UserNewWay user) {
+        System.out.println("Writing user " + user.getName() + " to internal DB");
+    }
+}
